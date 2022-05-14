@@ -12,13 +12,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    'student-management-system007.herokuapp.com/',
-    '127.0.0.1',
-    '0.0.0.0',
-    'localhost'
+    '*'
 ]
 
 # Application definition
@@ -71,10 +68,21 @@ WSGI_APPLICATION = 'student_management_system.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd6v69toraecrhg',                      
+        'USER': 'farqjyydqwxdjn',
+        'PASSWORD': 'eda219b95923286093bf596b77c7a014048d40c1cfa934b1bb5ffdcd26a6e206',
+        'HOST': 'ec2-44-196-223-128.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
